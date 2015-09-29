@@ -4,6 +4,8 @@ var gulp = require('gulp');
 var babelify = require('babelify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 
 
 gulp.task('build', function() {
@@ -21,8 +23,14 @@ gulp.task('build', function() {
 gulp.task('copy', function() {
   gulp.src('src/index.html')
   .pipe(gulp.dest('./dist'));
+});
 
-  gulp.src('src/scss/styles.css')
+
+gulp.task('sass', function() {
+  gulp.src('src/scss/*.scss')
+  .pipe(sourcemaps.init())
+  .pipe(sass())
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('./dist/css'));
 });
 
@@ -30,8 +38,8 @@ gulp.task('copy', function() {
 gulp.task('watch', function(){
   gulp.watch('src/**/*.js', ['build']);
   gulp.watch('src/**/*.html', ['copy']);
-  gulp.watch('src/**/*.scss', ['copy']);
+  gulp.watch('src/**/*.scss', ['sass']);
 })
 
 
-gulp.task('default', ['copy', 'build', 'watch']);
+gulp.task('default', ['copy', 'build', 'sass', 'watch']);

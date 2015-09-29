@@ -1,29 +1,19 @@
 'use strict';
 
+var React = require('react');
 
-var Square = require('./Square');
-
-
-
-for (var i = 0; i < 10; i++) {
-  console.log('inside ' + i);
-}
-
-console.log('outside ' + i);
-
-
-function doStuff(person) {
-  var { name, age, job } = person;
-
-  console.log(name + '(' + age + ') works as a ' + job);
-}
-
-doStuff({
-  name:'Jason',
-  job: 'Developer',
-  age: 31
+var App = React.createClass({
+  render: function() {
+    return (
+      <div className="jumbotron">
+          <h1>Hello PennyMac</h1>
+          <p>Demonstration of the Gulpfile.js, Package.json and Babel.js</p>
+          <p><a
+            className='btn btn-primary btn-lg' href='https://babeljs.io/'>Learn More</a>
+          </p>
+      </div>
+    )
+  }
 })
 
-function callback(response){
-  var [status, body] = response;
-}
+React.render(<App />, document.getElementById('root'));
