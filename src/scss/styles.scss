@@ -1,5 +1,9 @@
 $primary-color : #ff0000;
 
+.jumbotron {
+  margin-top: 60px;
+}
+
 .jumbotron > h1 {
   color: $primary-color;
 }
