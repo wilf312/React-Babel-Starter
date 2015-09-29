@@ -8,9 +8,10 @@ var Navbar = React.createClass({
       <nav className="navbar navbar-fixed-top navbar-inverse">
         <div className="container">
             <ul className='nav navbar-nav'>
-              <li><a href='http://www.pennymacusa.com/purchasing'>Purchasing</a></li>
-              <li><a href='http://www.pennymacusa.com/refinance'>Refinance</a></li>
-              <li><a href='http://www.pennymacusa.com/relief-and-assistance'>Relief &amp; Assistance</a></li>
+              <li><a href='https://facebook.github.io/react/'>React</a></li>
+              <li><a href='https://babeljs.io/'>Babel</a></li>
+              <li><a href='https://parse.com/'>Parse</a></li>
+              <li><a href='https://www.firebase.com/'>Firebase</a></li>
             </ul>
         </div>
       </nav>
