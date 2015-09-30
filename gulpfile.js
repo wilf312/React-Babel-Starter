@@ -16,7 +16,7 @@ gulp.task('build', function() {
   .transform(babelify)
   .bundle()
   .pipe(source('app.js'))
-  .pipe(gulp.dest('./dist/js'));
+  .pipe(gulp.dest('./dist'));
 });
 
 
@@ -31,7 +31,7 @@ gulp.task('sass', function() {
   .pipe(sourcemaps.init())
   .pipe(sass())
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./dist/css'));
+  .pipe(gulp.dest('./dist'));
 });
 
 
