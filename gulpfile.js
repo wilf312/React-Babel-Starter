@@ -52,10 +52,6 @@ gulp.task('watch', function(){
   gulp.watch('src/**/*.js', ['build']);
   gulp.watch('src/**/*.html', ['copy']);
   gulp.watch('src/**/*.scss', ['sass']);
-
-  //gulp.watch('dist/**/*.html', ['server']);
-  //gulp.watch('dist/**/*.js', ['server']);
-  //gulp.watch('dist/**/*.css', ['server']); */
 })
 
 
