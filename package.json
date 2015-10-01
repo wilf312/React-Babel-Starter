@@ -14,11 +14,11 @@
     "browserify": "^11.2.0",
     "gulp": "^3.9.0",
     "gulp-sass": "^2.0.4",
+    "gulp-server-livereload": "^1.5.3",
     "gulp-sourcemaps": "^1.6.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-
     "express": "^4.13.3",
     "firebase": "^2.3.0",
     "react": "^0.13.3",

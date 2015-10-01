@@ -1,11 +1,12 @@
 'use strict';
 
-var gulp = require('gulp');
-var babelify = require('babelify');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
+var gulp = require('gulp'),
+    babelify = require('babelify'),
+    browserify = require('browserify'),
+    source = require('vinyl-source-stream'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    server = require('gulp-server-livereload');
 
 
 gulp.task('build', function() {
@@ -35,11 +36,27 @@ gulp.task('sass', function() {
 });
 
 
+gulp.task('serve', function(done){
+  gulp.src('./dist')
+  .pipe(server({
+    livereload: {
+        enable: true
+      },
+    defaultFile: 'index.html',
+    open: true
+  }))
+});
+
+
 gulp.task('watch', function(){
   gulp.watch('src/**/*.js', ['build']);
   gulp.watch('src/**/*.html', ['copy']);
   gulp.watch('src/**/*.scss', ['sass']);
+
+  //gulp.watch('dist/**/*.html', ['server']);
+  //gulp.watch('dist/**/*.js', ['server']);
+  //gulp.watch('dist/**/*.css', ['server']); */
 })
 
 
-gulp.task('default', ['copy', 'build', 'sass', 'watch']);
+gulp.task('default', [ 'build', 'serve', 'copy', 'sass', 'watch']);
